@@ -34,6 +34,34 @@ def getTemp(city_name):
 
   return temp
 
+def create_bigram(word):
+  return [word[i] + word[i+1] for i in range(len(word)-1)]
+
+def get_similarity_ratio(word1, word2):
+  word1, word2 = word1.lower(), word2.lower()
+  common = []
+  bigram1, bigram2 = create_bigram(word1), create_bigram(word2)
+  for i in range(len(bigram1)):
+    try:
+      cmn_elt = bigram2.index(bigram1[i])
+      common.append(bigram1[i])
+    except:
+      continue
+
+  return len(common)/max(len(bigram1), len(bigram2))
+
+def nlp(city_name, database={'toronto', 'paris', 'tokyo', 'vancouver', 'shanghai'}):
+  max_sim = 0.0
+  most_sim_word = city_name
+
+  for data_word in database:
+    cur_sim = get_similarity_ratio(city_name, data_word)
+    if cur_sim > max_sim:
+      max_sim = cur_sim
+      most_sim_word = data_word
+
+  return most_sim_word
+
 @slack_event_adapter.on('message')
 def printWeather(payload):
   print(payload)
@@ -41,14 +69,13 @@ def printWeather(payload):
   channel_id = event.get('channel')
   user_id = event.get('user')
   text2 = event.get('text')
-  o = getOvercast(text2)
-  t = getTemp(text2)
+  o = getOvercast(nlp(text2))
+  t = getTemp(nlp(text2))
+  p = nlp(text2).capitalize()
   if BOT_ID !=user_id:
-    slack_client.chat_postMessage(channel=channel_id, text='The temperature is ')
-    slack_client.chat_postMessage(channel=channel_id, text=t)
-    slack_client.chat_postMessage(channel=channel_id, text='°c')
-    slack_client.chat_postMessage(channel=channel_id, text='Overcast: ')
-    slack_client.chat_postMessage(channel=channel_id, text=o)
+    slack_client.chat_postMessage(channel=channel_id, text='Detected City: ' + str(p))
+    slack_client.chat_postMessage(channel=channel_id, text='The temperature is: ' + str(t) + ' °c')
+    slack_client.chat_postMessage(channel=channel_id, text='Overcast: ' + str(o))
 
 # Run the webserver micro-service
 if __name__ == "__main__":
