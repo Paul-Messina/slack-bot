@@ -52,7 +52,7 @@ def get_similarity_ratio(word1, word2):
 
 def nlp(city_name, database={'toronto', 'paris', 'tokyo', 'vancouver', 'shanghai'}):
   max_sim = 0.0
-  most_sim_word = city_name
+  most_sim_word = 'toronto'
 
   for data_word in database:
     cur_sim = get_similarity_ratio(city_name, data_word)
