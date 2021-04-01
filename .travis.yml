@@ -5,12 +5,10 @@ python:
     - 3.8
 
 install:
-    pip install slackclient
-    pip install slackbot
-    pip install python-dotenv
+    pip install -U pytest
 
 script:
-    bot.py
+    pytest
 
 codecov: 
     require_ci_to_pass: yes
