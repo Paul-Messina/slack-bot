@@ -1,0 +1,36 @@
+language: python
+python:
+    - 2.7
+    - 3.6
+    - 3.8
+
+install:
+    pip install codecov
+    pip install -U pytest
+
+script:
+    pytest
+
+codecov: 
+    require_ci_to_pass: yes
+
+coverage:
+    precision: 2
+    round: down
+    range: "70..100"
+    
+parsers:
+    gcov:
+      branch_detection:
+         conditional: yes
+         loop: yes
+         method: no
+         macro: no
+
+after_success: 
+   - codecov
+        
+comment: 
+   layout: "reach,diff,flags,files,footer"
+   behavior: default
+   require_changes: no
