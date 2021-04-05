@@ -5,6 +5,7 @@ python:
     - 3.8
 
 install:
+    pip install codecov
     pip install -U pytest
 
 script:
@@ -25,6 +26,9 @@ parsers:
          loop: yes
          method: no
          macro: no
+
+after_success: 
+   - codecov
         
 comment: 
    layout: "reach,diff,flags,files,footer"
