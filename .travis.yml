@@ -14,9 +14,9 @@ script:
 deploy:
   provider: elasticbeanstalk
   access_key_id:
-    secure: "Encrypted <access-key-id>=AKIASYHYQNLOGIDY6GVU"
+    secure: "Encrypted <access-key-id>=AKIASYHYQNLOAZ7V4IC2"
   secret_access_key:
-    secure: "Encypted <secret-access-key>=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"
+    secure: "Encypted <secret-access-key>=BkU3RD/iM1XSC8G4WXg4hLOxYyv78HDvmlENf+KZ"
   region: "us-east-2"
   app: "CPS847-Assignment-2"
   env: "Cps847assignment2-env"
