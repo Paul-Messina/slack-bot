@@ -14,7 +14,7 @@ script:
 deploy:
   provider: elasticbeanstalk
   access_key_id:
-    secure: "Encrypted <access-key-id>=key-0eccf817ca3a590e1"
+    secure: "Encrypted <access-key-id>=0eccf817ca3a590e1"
   secret_access_key:
     secure: "Encypted <secret-access-key>=5b03e6864a2261f3ffe536e22147e42f0321bbff"
   region: "us-east-2"
