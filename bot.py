@@ -12,5 +12,3 @@ client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
 
 # connect the bot to the channel in Slack Channel
 client.chat_postMessage(channel='#bot-test-channel', text='Bot Test')
-
-#test

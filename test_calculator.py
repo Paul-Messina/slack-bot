@@ -1,5 +1,8 @@
-def add_func(x,y):
-    return x+y
+import unittest
+import calculator
 
-def test_add_func():
-    assert add_func(1,2) == 3
+class TestCalculator(unittest.TestCase):
+
+    def test_add(self):
+        result = calculator.add_func(10, 5)
+        self.assertEqual(result, 15)
