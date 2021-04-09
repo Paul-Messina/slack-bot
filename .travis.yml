@@ -15,7 +15,7 @@ deploy:
   provider: elasticbeanstalk
   access_key_id: "Encrypted <access-key-id>=AKIASYHYQNLOAZ7V4IC2"
   secret_access_key: "Encypted <secret-access-key>=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"
-  region: "us-east-1"
+  region: "us-east-2"
   app: "CPS847-Assignment-2"
   env: "Cps847assignment2-env"
   bucket_name: "elasticbeanstalk-us-east-2-189499730652"
