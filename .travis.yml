@@ -9,5 +9,4 @@ install:
     pip install -U pytest
 
 script:
-    python test_calculator.py
-    python -m unittest test_calculator.py
+    pytest
