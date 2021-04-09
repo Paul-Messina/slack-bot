@@ -1,8 +1,0 @@
-{
-    "AccessKey": {
-        "AccessKeyId": "AKIASYHYQNLOGIDY6GVU",
-        "Status": "Active",
-        "SecretAccessKey": "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",
-        "CreateDate": "2021-04-09T20:56:30+00:00"
-    }
-}
