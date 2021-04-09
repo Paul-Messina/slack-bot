@@ -13,8 +13,8 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  access_key_id: "Encrypted <access-key-id>=AKIASYHYQNLOAZ7V4IC2"
-  secret_access_key: "Encypted <secret-access-key>=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"
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
   region: "us-east-1"
   app: "CPS843-Assignment-2"
   env: "Cps843assignment2-env"
