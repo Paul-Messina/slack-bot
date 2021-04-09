@@ -1,7 +1,7 @@
 language: python
 python:
-    - 2.7
-    - 3.6
+    #- 2.7
+    #- 3.6
     - 3.8
 
 install:
@@ -11,19 +11,16 @@ install:
 script:
     pytest
 
-# jobs:
-#     include:
-#     - stage: deploy
-#         deploy:
-#         provider: elasticbeanstalk
-#         access_key_id: "$AWS_ACCESS_KEY"
-#         secret_access_key: "$AWS_SECRET_KEY"
-#         region: "us-east-2"
-#         app: "CPS847-Assignment-2"
-#         env: "Cps847assignment2-env"
-#         bucket_name: "elasticbeanstalk-us-east-2-189499730652"
-#         on:
-#             branch: main
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
+  region: "us-east-2"
+  app: "CPS847-Assignment-2"
+  env: "Cps847assignment2-env"
+  bucket_name: "elasticbeanstalk-us-east-2-189499730652"
+  on:
+    branch: main
 
-#         after_deploy:
-#             - echo "deploy complete"
+after_deploy:
+    - echo "deploy complete"
