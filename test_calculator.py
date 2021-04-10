@@ -1,5 +1,6 @@
 import unittest
 import calculator
+import json
 
 class TestCalculator(unittest.TestCase):
 
@@ -10,3 +11,6 @@ class TestCalculator(unittest.TestCase):
     def test_subtract(self):
         resultSub = calculator.subtract_func(10, 5)
         self.assertEqual(resultSub, 5)
+
+    test_add(self)
+    test_subtract(self)
