@@ -10,7 +10,7 @@ install:
     pip install coverage
 
 script:
-    python test_calculator.py
+    coverage run test_calculator.py
 
 deploy:
   provider: elasticbeanstalk
