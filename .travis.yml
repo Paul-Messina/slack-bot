@@ -7,6 +7,7 @@ python:
 install:
     pip install codecov
     pip install -U pytest
+    pip install coverage
 
 script:
     pytest
@@ -24,3 +25,4 @@ deploy:
 
 after_deploy:
     - echo "deploy complete"
+    - bash <(curl -s https://codecov.io/bash)
