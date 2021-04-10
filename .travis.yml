@@ -10,7 +10,7 @@ install:
     pip install coverage
 
 script:
-    pytest --cov-report term --cov=slack-bot tests/
+    pytest --cov-report xml
 
 deploy:
   provider: elasticbeanstalk
