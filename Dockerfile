@@ -1,13 +1,13 @@
-FROM ubuntu
+FROM python:3.6.1
 
-MAINTAINER <martha.dybas@ryerson.ca>
+WORKDIR /a2
 
-RUN apt-get update
+ADD . /a2
 
-RUN apt-get install nginx -y
+RUN pip install -r requirements.txt
 
-COPY index.html /var/www/html/
+EXPOSE 5000
 
-CMD ["nginx", "-g" ,"daemon off;"]
+CMD ["python","web_app.py"]
 
 
