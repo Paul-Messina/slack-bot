@@ -17,8 +17,8 @@ deploy:
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
   region: "us-east-2"
-  app: "CPS847-Assignment-2"
-  env: "Cps847assignment2-env"
+  app: "CPS847-A2"
+  env: "Cps847a2-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-189499730652"
   on:
     branch: main
