@@ -16,10 +16,10 @@ deploy:
   provider: elasticbeanstalk
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
-  region: "us-east-2"
-  app: "CPS847-A2"
-  env: "Cps847a2-env-1"
-  bucket_name: "elasticbeanstalk-us-east-2-189499730652"
+  region: "us-east-1"
+  app: "CPS847A2"
+  env: "Cps847a2-env"
+  bucket_name: "elasticbeanstalk-us-east-1-921010745606"
   on:
     branch: main
 
